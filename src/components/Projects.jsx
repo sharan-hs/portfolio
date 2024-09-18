@@ -9,18 +9,21 @@ const Projects = () => {
     {
       id: 1,
       src: FabFashionImg,
+      projectTitle: "FabFashion",
       weblink: "https://fab-fashion.vercel.app/",
       githublink: "https://github.com/sharan-hs/FabFashion",
     },
     {
       id: 2,
       src: AiFlixImg,
+      projectTitle: "AI-Flix",
       weblink: "https://ai-flix-lake.vercel.app/",
       githublink: "https://github.com/sharan-hs/AI-flix",
     },
     {
       id: 3,
       src: DevConnectImg,
+      projectTitle: "DevConnect",
       weblink: "https://dev-connect-frontend.vercel.app/",
       githublink: "https://github.com/sharan-hs/dev_connect_frontend",
     },
@@ -29,7 +32,7 @@ const Projects = () => {
   return (
     <div
       name="projects"
-      className="bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen"
+      className="bg-gradient-to-b from-black to-gray-800 w-full text-white "
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
@@ -40,30 +43,33 @@ const Projects = () => {
         </div>
 
         <div className="flex flex-wrap gap-10">
-          {projectsList?.map(({ id, src, weblink, githublink }) => (
-            <div
-              key={id}
-              className="shadow-md shadow-gray-600 rounded-lg flex flex-col"
-            >
-              <img
-                src={src}
-                alt=""
-                className="rounded-md min-h-[200px] duration-200 hover:scale-105"
-              />
-              <div className="flex items-center justify-center">
-                <Link target="_blank" to={weblink}>
-                  <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                    Demo
-                  </button>
-                </Link>
-                <Link target="_blank" to={githublink}>
-                  <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
-                    Code
-                  </button>
-                </Link>
+          {projectsList?.map(
+            ({ id, src, weblink, githublink, projectTitle }) => (
+              <div
+                key={id}
+                className="shadow-md shadow-gray-600 rounded-lg flex flex-col"
+              >
+                <p className="text-2xl my-2">{projectTitle}</p>
+                <img
+                  src={src}
+                  alt=""
+                  className="rounded-md min-h-[200px] duration-200 hover:scale-105"
+                />
+                <div className="flex items-center justify-center">
+                  <Link target="_blank" to={weblink}>
+                    <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                      Demo
+                    </button>
+                  </Link>
+                  <Link target="_blank" to={githublink}>
+                    <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                      Code
+                    </button>
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </div>
     </div>
