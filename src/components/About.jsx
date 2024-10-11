@@ -37,9 +37,11 @@ const About = () => {
             Backend development: Creating RESTful APIs with Node.js and
             Express.js, interacting with MongoDB databases, and implementing
             authentication and authorization mechanisms.
-          </li>{" "}
-          My hobbies include playing guitar, football and exploring new
-          destinations through travel and trekking.
+          </li>
+          <p className="pt-4">
+            My hobbies include playing guitar, football and exploring new
+            destinations through travel and trekking.
+          </p>
         </ul>
       </div>
     </div>
